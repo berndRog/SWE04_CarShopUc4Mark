@@ -111,11 +111,9 @@ public class RepositoryMarkedCarUt {
       // Act
       var actual = _unitOfWork.RepositoryMarkedCar.SelectByUserId(seed.User1.Id);
       // Assert
-      //var actual = _unitOfWork.RepositoryUser.FindById(seed.User1.Id, true, true, true);
-      //actual.Should().NotBeNull();
-      //var markedCars = actual!.MarkedCars;
-      //markedCars.Should().NotBeNull().And.HaveCount(6);
-      //  actual.Should().BeEquivalentTo(seed.User1, opt => opt.IgnoringCyclicReferences());
+      actual.Should().NotBeNull();
+      actual.Should().HaveCount(6);
+      actual.Should().BeEquivalentTo(seed.User1.MarkedCars, ExcludePropMarkedCar);
    }
 
    [Fact]
@@ -127,12 +125,9 @@ public class RepositoryMarkedCarUt {
       // Act
       var actual = _unitOfWork.RepositoryMarkedCar.SelectByCarId(seed.Car21.Id);
       // Assert
-      actual.Should().BeEquivalentTo(seed.User1.MarkedCars, opt => opt.IgnoringCyclicReferences());
-      //var actual = _unitOfWork.RepositoryUser.FindById(seed.User1.Id, true, true, true);
-      //actual.Should().NotBeNull();
-      //var markedCars = actual!.MarkedCars;
-      //markedCars.Should().NotBeNull().And.HaveCount(6);
-      //  actual.Should().BeEquivalentTo(seed.User1, opt => opt.IgnoringCyclicReferences());
+      actual.Should().NotBeNull();
+      actual.Should().HaveCount(1);
+      actual.Should().BeEquivalentTo(seed.Car21.MarkedCars, ExcludePropMarkedCar);
    }
 
    [Fact]
