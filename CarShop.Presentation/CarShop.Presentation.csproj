@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>CarShop</RootNamespace>
+		<AssemblyName>CarShop.Presentation</AssemblyName>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>disable</ImplicitUsings>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarShop.Application\CarShop.Application.csproj" />
+  </ItemGroup>
+
+</Project>

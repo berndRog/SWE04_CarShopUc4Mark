@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>CarShop</RootNamespace>
+		<AssemblyName>CarShop.DomainModel</AssemblyName>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>CarShop.DomainModel</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Bernd Rogalla</Authors>
+		<Company>Ostfalia</Company>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	
+
+</Project>
