@@ -130,36 +130,6 @@ public class RepositoryMarkedCarUt {
       actual.Should().BeEquivalentTo(seed.Car21.MarkedCars, ExcludePropMarkedCar);
    }
 
-   [Fact]
-   public void RemoveCarUt() {
-      // Arrange
-      var seed = new CSeed();
-      SixUsersWith21Cars(seed);
-      MarkSixCarsForUser1(seed);
-      // Act
-      IEnumerable<MarkedCar> markedCars = _unitOfWork.RepositoryMarkedCar.SelectByCarId(seed.Car21.Id);
-      foreach(var m in markedCars) {
-         User user = m.User;
-         Car car = m.Car;
-         user.RemoveMarkedCar(car);
-      }
-        
-      seed.User6.RemoveCar(seed.Car21);
-      _unitOfWork.SaveAllChanges();
-      _unitOfWork.Dispose();
-
-
-      // Assert
-      var actual = _unitOfWork.RepositoryUser.FindById(seed.User1.Id, true, true, true);
-      actual.Should().NotBeNull();
-      //var markedCars = actual!.MarkedCars;
-      //markedCars.Should().NotBeNull().And.HaveCount(6);
-
-
-      //  actual.Should().BeEquivalentTo(seed.User1, opt => opt.IgnoringCyclicReferences());
-
-   }
-
    private void TwoUserWithTwoCars(CSeed seed) {
       // Add User1 and User6
       _unitOfWork.RepositoryUser.Add(seed.User1);
